@@ -1,0 +1,8 @@
+{
+  "name": "build_access_app",
+  "app_id": "1e664d8e",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
