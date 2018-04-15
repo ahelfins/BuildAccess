@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Reports</ion-title>
+    <ion-title>Report</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+	<h4>Give an in-depth description of an accessibility issue.</h4>
+	<p><b>Location</b></p>
+	<ion-list>
+  <ion-item>
+  <ion-input placeholder="Building">Building</ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-input placeholder="Room">Room</ion-input>
+  </ion-item>
+  </ion-list>
+  <p><b>Photo</b></p>
+  	<ion-grid>
+  	<ion-row style="margin-bottom:.5rem; margin-top:-2rem">
+  	<ion-col padding>No file selected</ion-col>
+	<ion-col><button ion-button outline>Take Picture</button></ion-col>
+	</ion-row>
+	</ion-grid>
+	<p><b>Description</b></p>
+	<ion-textarea id="description" placeholder="Describe the issue" style="border:solid 1px gray"></ion-textarea>
+
+
+	<div text-center><button ion-button>Submit</button></div>
 
 </ion-content>
