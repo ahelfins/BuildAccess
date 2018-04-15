@@ -44,4 +44,10 @@ export class FirebaseProvider {
   getRooms(school, building){
   	return this.afDB.list('/Schools/' + school + '/' + building.trim() + '/');
   }
+
+  pushNewRoom(school,room){
+      this.afDB.database.ref("/").child('Schools').child(school).child(room).set(room);
+      console.log('pushed to a new room');
+    }
+
 }

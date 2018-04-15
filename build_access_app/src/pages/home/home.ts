@@ -19,12 +19,17 @@ export class HomePage {
 		this.school = navParams.get('id');
 		console.log("home has " + this.school);
 }
-	goTo(type,building){
+	goTo(type,building,room){
 		this.fbProvider.pushNewBuilding(this.school,building);
 		this.navCtrl.push(QuestionsPage, {
 			data: type
 		});
+		this.fbProvider.pushNewRoom(this.school,room);
+		this.navCtrl.push(QuestionsPage, {
+			data: type
+		});
 	}
+
 }
 
 
