@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 
 /**
  * Generated class for the LoginPage page.
@@ -16,12 +17,11 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    //this.tabsPage = TabsPage;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fbProvider: FirebaseProvider) {
   }
 
   goToHome(school){
-    //this.school = document.getElementById('schoolInput').value;
+    this.fbProvider.pushNewSchool(school);
     this.navCtrl.push(TabsPage, {data: school});
     console.log("document school "+school);
   }

@@ -27,4 +27,8 @@ export class FirebaseProvider {
   	return this.afDB.list('/RoomQs/');
   }
 
+  pushNewSchool(school){
+    this.afDB.list('/Schools/').push({ school: school });
+  }
+
 }
