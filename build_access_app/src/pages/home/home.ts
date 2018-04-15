@@ -18,17 +18,17 @@ export class HomePage {
 	constructor(public navCtrl: NavController, public navParams: NavParams, public fbProvider: FirebaseProvider){
 		this.school = navParams.get('id');
 		console.log("home has " + this.school);
-}
+	}
 	goTo(type,building,room){
 		this.fbProvider.pushNewBuilding(this.school,building);
 		this.navCtrl.push(QuestionsPage, {
 			type: type,
 			data: this.school
 		});
-		this.fbProvider.pushNewRoom(this.school,building,room);
+		/*this.fbProvider.pushNewRoom(this.school,building,room);
 		this.navCtrl.push(QuestionsPage, {
 			data: type
-		});
+		});*/
 	}
 
 }
