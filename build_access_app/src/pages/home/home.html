@@ -9,7 +9,8 @@
   <h1>
     Answer Questions
   </h1>
-  <p>Answer some simple questions about rooms around campus to help other people navigate campus</p>
+  <p>Answer some simple questions about rooms around campus to help other people navigate campus.</p>
+  <p><b>Choose a room & type of question:</b></p>
   <ion-list>
   <ion-item>
   <ion-input placeholder="Building">Building</ion-input>
@@ -21,10 +22,12 @@
   <ion-label>Type of question</ion-label>
   <ion-select #type>
     <ion-option value="parking">Parking</ion-option>
-    <ion-option value="building">Building</ion-option>
+    <ion-option value="building">Building/Exterior</ion-option>
     <ion-option value="room">Room</ion-option>
   </ion-select>
   </ion-item>
   </ion-list>
-  <button ion-button (click)="goTo(type.value)">Get Questions</button>
+  <div text-center>
+  <button ion-button (click)="goTo(type.value)">Answer Questions</button>
+  </div>
 </ion-content>
