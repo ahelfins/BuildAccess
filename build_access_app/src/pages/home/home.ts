@@ -13,6 +13,7 @@ export class HomePage {
 
 	constructor(public navCtrl: NavController) {
     this.questionsPage = QuestionsPage;
+
   }
 
   goTo(type){
