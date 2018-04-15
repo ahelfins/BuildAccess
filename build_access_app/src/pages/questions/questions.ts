@@ -30,16 +30,33 @@ export class QuestionsPage {
 
 
     ionViewDidLoad() {
-        console.log('ionViewDidLoad InfoPage');
+    	var parking = document.getElementById("parking");
+    	var building = document.getElementById("building");
+    	var room = document.getElementById("room");
+        
+        console.log(window.parent.location.search);
+        if(window.parent.location.search == "parking"){
+        	parking.style.visibility = "visible";
+        } else if(window.parent.location.search == "building"){
+        	building.style.visibility = "visible";
+        } else if(window.parent.location.search == "room"){
+        	building.style.visibility = "visible";
+        }
+
+
+
+        /*console.log('ionViewDidLoad InfoPage');
         document.getElementById("question").innerHTML = "hello";
-
-        var arr = [];
-        this.parkingQuestions.subscribe(q => {q.forEach(q => {
-        	arr.push(q);
-        	arr.push(1);
-        })});
-
-        console.log(arr);
-
+        var arr2 = this.parkingQuestions.observableArray();
+        let arr = [];
+        let i = 0;
+        this.parkingQuestions.subscribe(q => {
+        	q.forEach(q_item => {
+        		arr[i] = q_item;
+        		console.log(q_item);
+        		i++;
+        	});
+        });
+        console.log(arr2);*/
     }
 }
