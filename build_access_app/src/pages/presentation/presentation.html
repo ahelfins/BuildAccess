@@ -7,12 +7,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>presentation</ion-title>
+    <ion-title id="school">{{school}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-item>
+  <ion-label>Building</ion-label>
+  <ion-select #type>
+    <!--<ion-option *ngFor="let item of buildings | async">
+          {{ item }}
+    </ion-option>-->
+  </ion-select>
+  </ion-item>
 
 </ion-content>
