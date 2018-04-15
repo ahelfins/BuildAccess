@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { QuestionsPage } from '../questions/questions';
 
 
@@ -10,9 +10,12 @@ import { QuestionsPage } from '../questions/questions';
 
 export class HomePage {
 	questionsPage: any;
+	school: any;
 
-	constructor(public navCtrl: NavController) {
+	constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.questionsPage = QuestionsPage;
+		this.school = navParams.get('id');
+		console.log("home has " + this.school);
 
   }
 

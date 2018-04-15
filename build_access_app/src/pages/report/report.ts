@@ -15,7 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ReportPage {
 
+  school: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.school = navParams.get('id');
+    console.log("reports has " + this.school);
   }
 
   ionViewDidLoad() {

@@ -15,11 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PresentationPage {
 
+  school: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.school = navParams.get('id');
+    console.log("presentation has " + this.school);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PresentationPage');
+    this.school = this.school;
   }
 
 }
