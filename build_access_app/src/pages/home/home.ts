@@ -16,6 +16,12 @@ export class HomePage {
 
   }
 
+  goTo(type){
+  	this.navCtrl.push(QuestionsPage, {
+  		data: type
+  	});
+  }
+
 
 
 }

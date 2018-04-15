@@ -7,14 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>questions</ion-title>
+    <ion-title>Questions</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<p id="question"></p>
-	<button ion-button>Yes</button><button ion-button>No</button>
+	<ion-item text-wrap *ngFor="let item of questions | async" id="parking">
+        {{ item }}
+        <ion-segment>
+        	<ion-segment-button value="yes">Yes</ion-segment-button>
+        	<ion-segment-button value="no">No</ion-segment-button>
+        </ion-segment>
+    </ion-item>
+    <button ion-button>Done</button>
 
 </ion-content>
