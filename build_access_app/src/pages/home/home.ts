@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { QuestionsPage } from '../questions/questions';
 
 
 @Component({
@@ -8,7 +9,11 @@ import { NavController } from 'ionic-angular';
 })
 
 export class HomePage {
+	questionsPage: any;
 
+	constructor(public navCtrl: NavController) {
+    this.questionsPage = QuestionsPage;
+  }
 
 
 
