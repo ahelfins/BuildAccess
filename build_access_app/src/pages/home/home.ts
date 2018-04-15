@@ -22,7 +22,8 @@ export class HomePage {
 	goTo(type,building){
 		this.fbProvider.pushNewBuilding(this.school,building);
 		this.navCtrl.push(QuestionsPage, {
-			data: type
+			type: type,
+			data: this.school
 		});
 	}
 }

@@ -16,11 +16,11 @@
 <ion-content padding>
 	<ion-item text-wrap *ngFor="let item of questions | async" id="parking">
         {{ item }}
-        <ion-segment>
+        <ion-segment><!--(ionChange)="storeAnswers(item)" [(ngModel)]="answer">-->
         	<ion-segment-button value="yes">Yes</ion-segment-button>
         	<ion-segment-button value="no">No</ion-segment-button>
         </ion-segment>
     </ion-item>
-    <div text-center><button ion-button>Done</button></div>
+    <div text-center><button ion-button (click)=sendQuestionData(item)>Done</button></div>
 
 </ion-content>
