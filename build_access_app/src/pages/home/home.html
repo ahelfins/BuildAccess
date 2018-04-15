@@ -5,12 +5,10 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+  <h1>
+    Where are you?
+  </h1>
+  <button ion-button [navPush]="questionsPage">Get Questions</button>
   <ion-list>
-    <ion-item *ngFor="let item of parkingQuestions | async">
-      <ion-item>
-        {{ item.$value }}
-      </ion-item>
-    </ion-item>
   </ion-list>
 </ion-content>
