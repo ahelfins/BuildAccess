@@ -20,28 +20,47 @@ export class QuestionsPage {
   	parkingQuestions: Observable<any[]>;
   	buildingQuestions: Observable<any[]>;
   	roomQuestions: Observable<any[]>;
+  	type: string;
+  	questions: Observable<any[]>;
 
   	constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
   		this.parkingQuestions = this.firebaseProvider.getParkingQuestions().valueChanges();
   		this.buildingQuestions = this.firebaseProvider.getBuildingQuestions().valueChanges();
   		this.roomQuestions = this.firebaseProvider.getRoomQuestions().valueChanges();
+  		this.type = navParams.get('data');
   	}
 
 
 
     ionViewDidLoad() {
-    	var parking = document.getElementById("parking");
+    	console.log(this.type);
+    	/*Don't get stuff from the DOM because apparently this is A Bad*/
+    	if(this.type == "parking")
+    		this.questions = this.parkingQuestions;
+    	else if(this.type == "building")
+    		this.questions = this.buildingQuestions;
+    	else if(this.type == "room")
+    		this.questions = this.roomQuestions;
+
+    	/*var parking = document.getElementById("parking");
     	var building = document.getElementById("building");
     	var room = document.getElementById("room");
+
+    	console.log(document.getElementById("parking"));
         
-        console.log(window.parent.location.search);
-        if(window.parent.location.search == "parking"){
+        if(this.type == "parking"){
         	parking.style.visibility = "visible";
-        } else if(window.parent.location.search == "building"){
+        	building.style.visibility = "hidden";
+        	room.style.visibility = "hidden";
+        } else if(this.type == "building"){
         	building.style.visibility = "visible";
-        } else if(window.parent.location.search == "room"){
-        	building.style.visibility = "visible";
-        }
+        	parking.style.visibility = "hidden";
+        	room.style.visibility = "hidden";
+        } else if(this.type == "room"){
+        	room.style.visibility = "visible";
+        	parking.style.visibility = "hidden";
+        	building.style.visibility = "hidden";
+        }*/
 
 
 

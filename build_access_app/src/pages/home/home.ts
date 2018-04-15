@@ -15,6 +15,12 @@ export class HomePage {
     this.questionsPage = QuestionsPage;
   }
 
+  goTo(type){
+  	this.navCtrl.push(QuestionsPage, {
+  		data: type
+  	});
+  }
+
 
 
 }
