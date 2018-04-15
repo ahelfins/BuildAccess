@@ -16,10 +16,14 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  tabsPage: any;
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.tabsPage = TabsPage; 
+    //this.tabsPage = TabsPage;
+  }
+
+  goToHome(school){
+    //this.school = document.getElementById('schoolInput').value;
+    this.navCtrl.push(TabsPage, {data: school});
+    console.log("document school "+school);
   }
 
   ionViewDidLoad() {

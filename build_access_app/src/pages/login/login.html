@@ -21,10 +21,10 @@
   </ion-item>
 
   <ion-item>
-    <ion-input type="school" placeholder="School"></ion-input>
+    <ion-input class = "input" type="text" placeholder="School" #schoolInput></ion-input>
   </ion-item>
 
 </ion-list>
 
-  <button ion-button [navPush]="tabsPage">Go</button>
+  <button ion-button school="secondary" (click)="goToHome(schoolInput.value)">Go</button>
 </ion-content>
