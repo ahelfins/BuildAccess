@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-	<ion-item text-wrap *ngFor="let item of questions | async" id="parking">
+	<ion-item text-wrap *ngFor="let item of questions | async">
         {{ item }}
         <ion-segment><!--(ionChange)="storeAnswers(item)" [(ngModel)]="answer">-->
         	<ion-segment-button value="yes">Yes</ion-segment-button>

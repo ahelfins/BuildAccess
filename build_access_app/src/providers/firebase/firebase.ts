@@ -36,4 +36,20 @@ export class FirebaseProvider {
     this.afDB.database.ref("/").child('Schools').child(school).child(building).set(building);
     console.log('pushed to a new building');
   }
+
+  getBuildings(school){
+  	return this.afDB.list('/Schools/' + school + '/');
+  }
+
+  getRooms(school, building){
+  	console.log("school: " + school);
+  	console.log("building: " + building);
+  	return this.afDB.list('/Schools/' + school.id + '/' + building.id + '/');
+  }
+
+  pushNewRoom(school,building, room){
+      this.afDB.database.ref("/").child('Schools').child(school).child(building).child(room).set(room);
+      console.log('pushed to a new room');
+    }
+
 }

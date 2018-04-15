@@ -16,7 +16,7 @@
   <ion-input placeholder="Building"#building>Building</ion-input>
   </ion-item>
   <ion-item>
-  <ion-input placeholder="Room">Room</ion-input>
+  <ion-input placeholder="Room"#room>Room</ion-input>
   </ion-item>
   <ion-item>
   <ion-label>Type of question</ion-label>
@@ -28,6 +28,6 @@
   </ion-item>
   </ion-list>
   <div text-center>
-  <button ion-button (click)="goTo(type.value,building.value)">Answer Questions</button>
+  <button ion-button (click)="goTo(type.value,building.value,room.value)">Answer Questions</button>
   </div>
 </ion-content>

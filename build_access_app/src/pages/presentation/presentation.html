@@ -15,13 +15,26 @@
 
 <ion-content padding>
 
+<ion-list>
   <ion-item>
   <ion-label>Building</ion-label>
-  <ion-select #type>
-    <!--<ion-option *ngFor="let item of buildings | async">
+  <ion-select (ionChange)="generateRooms(item)" ngModel="item">
+    <ion-option *ngFor="let item of buildings | async">
           {{ item }}
-    </ion-option>-->
+    </ion-option>
   </ion-select>
   </ion-item>
+
+  <ion-item>
+  <ion-label>Room</ion-label>
+  <ion-select #roomselect>
+    <ion-option *ngFor="let item of rooms | async">
+      {{ item }}
+    </ion-option>
+  </ion-select>
+  </ion-item>
+  </ion-list>
+
+  <button>hello</button>
 
 </ion-content>
