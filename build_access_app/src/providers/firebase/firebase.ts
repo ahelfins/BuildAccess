@@ -44,7 +44,7 @@ export class FirebaseProvider {
   getRooms(school, building){
   	console.log("school: " + school);
   	console.log("building: " + building);
-  	return this.afDB.list('/Schools/' + school.id + '/' + building.id + '/');
+  	return this.afDB.list('/Schools/' + school.id + '/' + building + '/');
   }
 
   pushNewRoom(school,building, room){

@@ -19,7 +19,7 @@ import { Observable } from 'rxjs/Observable';
 export class PresentationPage {
   buildings: Observable<any[]>;
   rooms: Observable<any[]>;
-  fbProvider: FirebaseProvider;
+  fbProvider2: FirebaseProvider;
 
   school: any;
 
@@ -27,7 +27,7 @@ export class PresentationPage {
     this.school = navParams.get('id');
     console.log("presentation has " + this.school);
     this.buildings = this.fbProvider.getBuildings(this.school).valueChanges();
-    this.fbProvider = fbProvider;
+    this.fbProvider2 = fbProvider;
   }
 
   ionViewDidLoad() {
@@ -40,7 +40,7 @@ export class PresentationPage {
   generateRooms(building){
     console.log("hello generaterooms");
     //console.log(item.id);
-    this.rooms = this.fbProvider.getRooms(this.school, building).valueChanges();
+    this.rooms = this.fbProvider2.getRooms(this.school, building).valueChanges();
   }
 
 }
