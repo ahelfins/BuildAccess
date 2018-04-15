@@ -19,4 +19,12 @@ export class FirebaseProvider {
   	return this.afDB.list('/Parking/');
   }
 
+  getBuildingQuestions(){
+  	return this.afDB.list('/BuildingQs/');
+  }
+
+  getRoomQuestions(){
+  	return this.afDB.list('/RoomQs/');
+  }
+
 }
