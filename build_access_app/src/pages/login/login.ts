@@ -21,7 +21,7 @@ export class LoginPage {
   }
 
   goToHome(school){
-    this.fbProvider.pushNewSchool(school);
+    //this.fbProvider.pushNewSchool(school);
     this.navCtrl.push(TabsPage, {data: school});
     //console.log("document school "+school);
   }
