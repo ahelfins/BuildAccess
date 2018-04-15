@@ -37,8 +37,10 @@ export class PresentationPage {
     
   }
 
-  generateRooms(){
-    this.rooms = this.fbProvider.getRooms(this.school, this.building).valueChanges();
+  generateRooms(building){
+    console.log("hello generaterooms");
+    //console.log(item.id);
+    this.rooms = this.fbProvider.getRooms(this.school, building).valueChanges();
   }
 
 }

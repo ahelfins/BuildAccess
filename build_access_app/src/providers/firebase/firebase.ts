@@ -42,11 +42,13 @@ export class FirebaseProvider {
   }
 
   getRooms(school, building){
-  	return this.afDB.list('/Schools/' + school + '/' + building.trim() + '/');
+  	console.log("school: " + school);
+  	console.log("building: " + building);
+  	return this.afDB.list('/Schools/' + school.id + '/' + building.id + '/');
   }
 
-  pushNewRoom(school,room){
-      this.afDB.database.ref("/").child('Schools').child(school).child(room).set(room);
+  pushNewRoom(school,building, room){
+      this.afDB.database.ref("/").child('Schools').child(school).child(building).child(room).set(room);
       console.log('pushed to a new room');
     }
 

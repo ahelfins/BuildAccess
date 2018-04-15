@@ -24,7 +24,7 @@ export class HomePage {
 		this.navCtrl.push(QuestionsPage, {
 			data: type
 		});
-		this.fbProvider.pushNewRoom(this.school,room);
+		this.fbProvider.pushNewRoom(this.school,building,room);
 		this.navCtrl.push(QuestionsPage, {
 			data: type
 		});
