@@ -13,6 +13,20 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBhPk262_OHc1AZjrV38SweJuAXZhIEMnM",
+    authDomain: "build-access.firebaseapp.com",
+    databaseURL: "https://build-access.firebaseio.com",
+    projectId: "build-access",
+    storageBucket: "build-access.appspot.com",
+    messagingSenderId: "1025545922404"
+  };
 
 @NgModule({
   declarations: [
@@ -27,6 +41,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -43,6 +60,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

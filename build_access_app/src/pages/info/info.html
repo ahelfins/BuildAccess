@@ -14,5 +14,12 @@
 
 
 <ion-content padding>
+  <ion-list>
 
+    <ion-item *ngFor="let item of parkingQuestions | async">
+      <ion-item>
+        {{ item }}
+      </ion-item>
+    </ion-item>
+  </ion-list>
 </ion-content>
